@@ -3,24 +3,16 @@
 <?php
 
 require_once('project.php');
+$loader = new Twig_Loader_Filesystem('templates');
+$twig = new Twig_Environment($loader, array(
+    'cache' => 'compilation_cache',));
+$data='';
+$data .= summ('summa','zvit');
+$data .= tableM(getPayments());
+echo $twig->render('index.html', array('data' => $data));
 
 
-$site='
-    <html>
-        <body background="money.jpg">';
 
-    $site .= '<h1 align="center">Звіт по витратах</h1>';
-    $site .= summ('summa','zvit');
-    $site .= tableM(getPayments());
-$site .='</br>';
-$site .='</br>';
-$site .='</br>';
-//$site .= '<h2 align="center"><a href="http://localhost/test/132.php" >Додати новий заис</a></h2>';
-$site .= '<table align="center"><tr><td><button   onclick="window.location.href=\'index.php?go=addData\'"><img src="add.png" alt="Add"
-          style="vertical-align: middle">' .'Додати новий запис'.'</button></td></tr></table>';
-$site .= '</body>';
-$site .= '</html>';
-echo $site;
 
 if (array_key_exists('go', $_REQUEST))
     {
