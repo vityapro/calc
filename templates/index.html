@@ -6,9 +6,14 @@
 </head>
 <body background="money.jpg">
 <h1 align="center">Звіт по витратах</h1>
-{% verbatim %}
-{{ data }}
-{% endverbatim %}
+
+<table align="center">';
+{% for item in payments['list'] %}
+    <tr><td>{{ item['data']}}</td>
+        <td>{{item['summa']}}</td></tr>
+{% endfor %}
+
+</table>
 </br></br></br>
 <table align="center"><tr><td><button   onclick="window.location.href='index.php?go=addData'">
     <img src="add.png" alt="Add" style="vertical-align: middle">Додати новий запис </button></td></tr></table>

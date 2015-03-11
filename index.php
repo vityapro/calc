@@ -1,15 +1,25 @@
-
-
 <?php
 
+error_reporting(E_ALL);
 require_once('project.php');
 $loader = new Twig_Loader_Filesystem('templates');
-$twig = new Twig_Environment($loader, array(
-    'cache' => 'compilation_cache',));
+$twig = new Twig_Environment($loader,
+    array(
+        'cache' => 'compilation_cache',
+        'debug' => true
+    )
+);
+$twig->addExtension(new Twig_Extension_Debug());
 $data='';
 $data .= summ('summa','zvit');
-$data .= tableM(getPayments());
-echo $twig->render('index.html', array('data' => $data));
+$payments =getPayments();//tableM(getPayments());
+/*$payments = array(
+    'list' => array(
+        'data' => 'text',
+        'summa' => 'text1',
+    )
+);*/
+echo $twig->render('index.html',array('payments' => $payments)); //$twig->render('index.html',array('data' => $data) ); //
 
 
 

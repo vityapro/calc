@@ -6,7 +6,7 @@ $db_username = 'vitya';
 $db_password = '123';
 
 // Connect to DB
-$connect_to_db = mysql_connect($db_host, $db_username, $db_password)
+$connect_to_db = @mysql_connect($db_host, $db_username, $db_password)
 or die("Could not connect: " . mysql_error());
 myDB::setDbh($connect_to_db);
 
