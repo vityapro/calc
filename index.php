@@ -4,8 +4,6 @@ error_reporting(E_ALL);
 require_once('project.php');
 require_once('controller.Add.php');
 require_once('controller.delete.php');
-require_once('controller.redirect.php');
-require_once('controller.getPayments.php');
 require_once('controller.form.php');
 
 
