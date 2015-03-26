@@ -46,3 +46,9 @@ function addDate($data,$summa)
  VALUES("'.$data.'", "'.$summa.'")';
     mysql_query($sql, myDB::getDbh());
     }
+
+function validateDate($date, $format = 'Y-m-d')
+{
+    $d = DateTime::createFromFormat($format, $date);
+    return $d && $d->format($format) == $date;
+}

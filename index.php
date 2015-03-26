@@ -24,16 +24,10 @@ echo $twig->render('index.html',array('payments' => $payments,'sum'=>$sum));
 if (array_key_exists('go', $_REQUEST))
     {
     $go=$_REQUEST['go'];
-    if ($go=='form')
-    {
-        $param=array($twig,'');
-    }
-        else
-        {
-            $param=array('','');
-        }
 
-        call_user_func_array ($go,$param);
+        $param=array($twig,'');
+        echo call_user_func_array ($go,$param);
+
 
     }
 

@@ -1,5 +1,6 @@
 <?php
 function form($twig)
 {
-    echo $twig->render('form.html');
+
+    return( $twig->render('form.html'));
 }

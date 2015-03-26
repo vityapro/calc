@@ -1,14 +1,18 @@
 {% extends "style_body.html" %}
 
 {% block body %}
+
+{% if bla == 'stopudovo' %}
+<p align="center">Ошибка ввода данных!</p>
+{% endif %}
 <form name="test" method="post" action="index.php">
 
    <p align="center"><b>Введіть дату в форматі гггг-мм-дд:</b></br>
        <input type="hidden" name="go" value="add" >
-       <input type="text" size="40" name="data" align="center" ></br>
+       <input type="text" size="40" name="data" align="center" value="{{data}}"></br>
 
        <b align="center">Введіть витрачену сумму:</b></br>
-       <input type="text" size="40" name="summa" align="center"></br>
+       <input type="text" size="40" name="summa" align="center" value="{{summa}}"></br>
        </p>
 
    <p align="center"><input type="submit" value="Додати запис">
