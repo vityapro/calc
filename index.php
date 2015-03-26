@@ -2,6 +2,13 @@
 
 error_reporting(E_ALL);
 require_once('project.php');
+require_once('controller.Add.php');
+require_once('controller.delete.php');
+require_once('controller.redirect.php');
+require_once('controller.getPayments.php');
+require_once('controller.form.php');
+
+
 $loader = new Twig_Loader_Filesystem('templates');
 $twig = new Twig_Environment($loader,
     array(
@@ -12,43 +19,42 @@ $twig = new Twig_Environment($loader,
 $twig->addExtension(new Twig_Extension_Debug());
 $data='';
 $data .= summ('summa','zvit');
-$payments =getPayments();//tableM(getPayments());
-/*$payments = array(
-    'list' => array(
-        'data' => 'text',
-        'summa' => 'text1',
-    )
-);*/
-echo $twig->render('index.html',array('payments' => $payments)); //$twig->render('index.html',array('data' => $data) ); //
-
-
-
-
+$payments =getPayments();
+$sum=summ('summa','zvit');
+$param=array('','');
+echo $twig->render('index.html',array('payments' => $payments,'sum'=>$sum));
 if (array_key_exists('go', $_REQUEST))
     {
     $go=$_REQUEST['go'];
-    }
-    else
+    if ($go=='form')
     {
-    $go='';
+        $param=array($twig,'');
     }
-switch ($go) {
+        else
+        {
+            $param=array('','');
+        }
+
+        call_user_func_array ($go,$param);
+
+    }
+
+
+//call_user_func_array ($func,$param);
+/*switch ($go) {
     case '':
+        echo $twig->render('index.html',array('payments' => $payments));
 
         break;
     case 'addData':
-        $form = showForm();
-        echo "$form";
+        echo $twig->render('form.html');
         break;
     case 'add':
-        $data=$_POST['data'];
-        $summa=$_POST['summa'];
-        addDate($data,$summa);
-        redirect('index.php');
+        addDate();
         break;
     case 'delete':
-        $id = $_GET['id'];
-        delete($id);
-        redirect('index.php');
+          delete();
+
         break;
 }
+*/
