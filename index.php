@@ -19,15 +19,15 @@ $twig->addExtension(new Twig_Extension_Debug());
 
 
 $param=array('','');
-$param = array($twig,'');
+$param=array($twig,'');
 
-if (array_key_exists('go', $_REQUEST)) {
+if (array_key_exists('go', $_REQUEST)){
     $go = $_REQUEST['go'];
     echo call_user_func_array($go, $param);
 } else {
            $go='index';
-           echo call_user_func_array ($go,$param);
-        }
+           echo call_user_func_array($go, $param);
+}
 
 
 

@@ -2,7 +2,7 @@
 require_once '/vendor/autoload.php';
 require_once('db.php');
 
-function summ ($st,$table)
+function summ($st, $table)
 {
 
     $result = mysql_query("select sum($st) as lol from $table",  myDB::getDbh() );
@@ -40,7 +40,7 @@ function redirect($url)
     exit;
     }
 
-function addDate($data,$summa)
+function addDate($data, $summa)
     {
     $sql = 'INSERT INTO '.myDB::getTable().'(data, summa)
  VALUES("'.$data.'", "'.$summa.'")';
