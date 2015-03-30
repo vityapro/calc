@@ -31,7 +31,7 @@ function del ($id)
      // передаем переменной id значение глобального массива POST
     $sql ="DELETE FROM ".myDB::getTable()." WHERE id = $id";
     mysql_query($sql, myDB::getDbh());
-       mysql_query($sql);
+
 
     }
 function redirect($url)
@@ -51,4 +51,19 @@ function validateDate($date, $format = 'Y-m-d')
 {
     $d = DateTime::createFromFormat($format, $date);
     return $d && $d->format($format) == $date;
+}
+function zapros($id)
+{
+    $data = array();
+    $sql ="SELECT * FROM ".myDB::getTable()." WHERE id = $id";
+    $result=mysql_query($sql, myDB::getDbh());
+    while ($row = mysql_fetch_array($result)) {
+        $data['list'][] = $row;
+    }
+    return $data;
+}
+function editDate($data, $summa, $id)
+{
+    mysql_query("UPDATE ".myDB::getTable()." SET data = '$data', summa = '$summa' WHERE id = '$id'", myDB::getDbh());
+
 }

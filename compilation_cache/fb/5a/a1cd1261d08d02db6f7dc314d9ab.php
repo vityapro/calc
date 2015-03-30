@@ -30,7 +30,7 @@ class __TwigTemplate_fb5aa1cd1261d08d02db6f7dc314d9ab extends Twig_Template
         // line 4
         echo "<h1 align=\"center\">Звіт по витратах</h1>
 
-<table align=\"center\">';
+<table align=\"center\">
 ";
         // line 7
         $context['_parent'] = (array) $context;
@@ -47,13 +47,17 @@ class __TwigTemplate_fb5aa1cd1261d08d02db6f7dc314d9ab extends Twig_Template
         <td><button  onclick=\"window.location.href='index.php?id=";
             // line 10
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : null), "id", array(), "array"), "html", null, true);
-            echo "&go=delete'\"><img src=\"del.gif\" alt=\"Del\"style=\"vertical-align: middle\">  </button></td></tr>
+            echo "&go=delete'\"><img src=\"del.gif\" alt=\"Del\"style=\"vertical-align: middle\">  </button></td>
+        <td><button  onclick=\"window.location.href='index.php?id=";
+            // line 11
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : null), "id", array(), "array"), "html", null, true);
+            echo "&go=zapr'\"><img src=\"edit.gif\" alt=\"Del\"style=\"vertical-align: middle\">  </button></td></tr>
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 12
+        // line 13
         echo "    <tr><td>";
         echo twig_escape_filter($this->env, (isset($context["sum"]) ? $context["sum"] : null), "html", null, true);
         echo "</td></tr>
@@ -76,6 +80,6 @@ class __TwigTemplate_fb5aa1cd1261d08d02db6f7dc314d9ab extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  55 => 12,  47 => 10,  43 => 9,  38 => 8,  34 => 7,  29 => 4,  26 => 3,);
+        return array (  59 => 13,  51 => 11,  47 => 10,  43 => 9,  38 => 8,  34 => 7,  29 => 4,  26 => 3,);
     }
 }
