@@ -27,7 +27,7 @@ class __TwigTemplate_2258131c6b70dab6abcefc7387f44d29 extends Twig_Template
         $this->displayBlock('head', $context, $blocks);
         // line 8
         echo "</head>
-<body background=\"money.jpg\">
+<body background=\"img/money.jpg\">
 ";
         // line 10
         $this->displayBlock('body', $context, $blocks);
