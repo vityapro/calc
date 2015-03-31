@@ -6,6 +6,7 @@ function valid ()
 
    if(in_array($go,$chekGo))
    {
+
    }else{
 redirect('404.html');
    }

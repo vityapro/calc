@@ -47,11 +47,11 @@ class __TwigTemplate_fb5aa1cd1261d08d02db6f7dc314d9ab extends Twig_Template
         <td><button  onclick=\"window.location.href='index.php?id=";
             // line 10
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : null), "id", array(), "array"), "html", null, true);
-            echo "&go=delete'\"><img src=\"del.gif\" alt=\"Del\"style=\"vertical-align: middle\">  </button></td>
+            echo "&go=delete'\"><img src=\"img/del.gif\" alt=\"Del\"style=\"vertical-align: middle\">  </button></td>
         <td><button  onclick=\"window.location.href='index.php?id=";
             // line 11
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : null), "id", array(), "array"), "html", null, true);
-            echo "&go=zapr'\"><img src=\"edit.gif\" alt=\"Del\"style=\"vertical-align: middle\">  </button></td></tr>
+            echo "&go=zapr'\"><img src=\"img/edit.gif\" alt=\"Del\"style=\"vertical-align: middle\">  </button></td></tr>
 ";
         }
         $_parent = $context['_parent'];
@@ -64,7 +64,7 @@ class __TwigTemplate_fb5aa1cd1261d08d02db6f7dc314d9ab extends Twig_Template
 </table>
 </br></br></br>
 <table align=\"center\"><tr><td><button   onclick=\"window.location.href='index.php?go=form'\">
-    <img src=\"add.png\" alt=\"Add\" style=\"vertical-align: middle\">Додати новий запис </button></td></tr></table>
+    <img src=\"img/add.png\" alt=\"Add\" style=\"vertical-align: middle\">Додати новий запис </button></td></tr></table>
 ";
     }
 

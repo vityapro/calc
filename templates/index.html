@@ -7,12 +7,12 @@
 {% for item in payments['list'] %}
     <tr><td>{{ item['data']}}</td>
         <td>{{item['summa']}}</td>
-        <td><button  onclick="window.location.href='index.php?id={{item['id']}}&go=delete'"><img src="del.gif" alt="Del"style="vertical-align: middle">  </button></td>
-        <td><button  onclick="window.location.href='index.php?id={{item['id']}}&go=zapr'"><img src="edit.gif" alt="Del"style="vertical-align: middle">  </button></td></tr>
+        <td><button  onclick="window.location.href='index.php?id={{item['id']}}&go=delete'"><img src="img/del.gif" alt="Del"style="vertical-align: middle">  </button></td>
+        <td><button  onclick="window.location.href='index.php?id={{item['id']}}&go=zapr'"><img src="img/edit.gif" alt="Del"style="vertical-align: middle">  </button></td></tr>
 {% endfor %}
     <tr><td>{{sum}}</td></tr>
 </table>
 </br></br></br>
 <table align="center"><tr><td><button   onclick="window.location.href='index.php?go=form'">
-    <img src="add.png" alt="Add" style="vertical-align: middle">Додати новий запис </button></td></tr></table>
+    <img src="img/add.png" alt="Add" style="vertical-align: middle">Додати новий запис </button></td></tr></table>
 {% endblock %}
