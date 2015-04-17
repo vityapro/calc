@@ -11,3 +11,12 @@ function valid ()
 redirect('404.html');
    }
 }
+function validAdd ($summa,$data,$twig) {
+    if ($summa>0 and validateDate($data))
+    {
+
+    }else{
+        $da='stopudovo';
+        return $twig->render('form.html',array('bla' => $da,'summa'=>$summa,'data'=>$data));
+    }
+}

@@ -10,8 +10,8 @@ class __TwigTemplate_2258131c6b70dab6abcefc7387f44d29 extends Twig_Template
         $this->parent = false;
 
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
             'head' => array($this, 'block_head'),
+            'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -25,16 +25,28 @@ class __TwigTemplate_2258131c6b70dab6abcefc7387f44d29 extends Twig_Template
     ";
         // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 8
-        echo "</head>
+        // line 5
+        echo "    <meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\" />
+    <title>";
+        // line 6
+        $this->displayBlock('title', $context, $blocks);
+        echo "</title>
+
+
+</head>
 <body background=\"img/money.jpg\">
 ";
-        // line 10
-        $this->displayBlock('body', $context, $blocks);
         // line 11
+        $this->displayBlock('body', $context, $blocks);
+        // line 12
         echo "</div>
 </body>
 </html>";
+    }
+
+    // line 4
+    public function block_head($context, array $blocks = array())
+    {
     }
 
     // line 6
@@ -42,19 +54,7 @@ class __TwigTemplate_2258131c6b70dab6abcefc7387f44d29 extends Twig_Template
     {
     }
 
-    // line 4
-    public function block_head($context, array $blocks = array())
-    {
-        // line 5
-        echo "    <meta charset=\"UTF-8\">
-    <title>";
-        // line 6
-        $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-    ";
-    }
-
-    // line 10
+    // line 11
     public function block_body($context, array $blocks = array())
     {
     }
@@ -66,6 +66,6 @@ class __TwigTemplate_2258131c6b70dab6abcefc7387f44d29 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  56 => 10,  50 => 6,  44 => 4,  39 => 6,  33 => 11,  31 => 10,  27 => 8,  25 => 4,  20 => 1,  59 => 13,  51 => 11,  47 => 5,  43 => 9,  38 => 8,  34 => 7,  29 => 4,  26 => 3,);
+        return array (  56 => 11,  51 => 6,  46 => 4,  40 => 12,  38 => 11,  30 => 6,  27 => 5,  25 => 4,  20 => 1,);
     }
 }
